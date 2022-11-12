@@ -6,7 +6,6 @@ wn.bgcolor("orange")
 wn.setup(width=800, height=600)
 wn.tracer(0)
 
-
 #Paddle A
 paddle_a = turtle.Turtle()
 paddle_a.speed(0)
@@ -31,6 +30,8 @@ ball.color("white")
 ball.shapesize(stretch_wid=1, stretch_len=1)
 ball.penup()
 ball.goto(0, 0)
+ball.dx = 2
+ball.dy = 2
 #Functions
 def paddle_a_up():
     y = paddle_a.ycor()
@@ -61,3 +62,8 @@ wn.onkeypress(paddle_b_down, "l")
 #Main game loop
 while True:
     wn.update()
+
+    #ball movimentation
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
+
